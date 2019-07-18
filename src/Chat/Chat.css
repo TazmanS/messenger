@@ -1,0 +1,14 @@
+.ChatBody{
+    margin-top: 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.ChatBody .collection p{
+    overflow: hidden;
+}
+
+.ChatBody .collection p:nth-child(odd){
+    max-width: 100%;
+    background-color: rgb(202, 202, 202);
+}

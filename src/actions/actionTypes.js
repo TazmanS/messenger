@@ -1,0 +1,5 @@
+export const REGISTER_NEW_USER = "REGISTER_NEW_USER"
+export const LOGIN_USER = "LOGIN_USER"
+export const USER_EXIT = "USER_EXIT"
+export const USER_NEW_NAME = "USER_NEW_NAME"
+export const USER_NEW_MESS = "USER_NEW_MESS"
