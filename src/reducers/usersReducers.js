@@ -1,14 +1,16 @@
 import {LOGIN_USER, 
         USER_EXIT, 
         USER_NEW_NAME,
-        USER_NEW_MESS} from '../actions/actionTypes'
+        USER_NEW_MESS,
+        USER_DEL_MESS,
+        GET_CHAT} from '../actions/actionTypes'
 
 const initialState = {
     
     id: '', 
     name: "Пользователь",
     age: '25',
-    chat: [],
+    chat: [{name: "", text: ""}],
     userIndicator: false
 
 }
@@ -44,7 +46,19 @@ const usersReducers = (state = initialState, action) => {
             return{
                 ...state,
                 chat: action.newChat
-            }    
+            } 
+            
+        case USER_DEL_MESS:
+            return{
+                ...state,
+                chat: action.newChat
+            } 
+            
+        case GET_CHAT:
+            return{
+                ...state,
+                chat: action.chat
+            } 
 
 
         default: return state

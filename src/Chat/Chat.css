@@ -4,11 +4,24 @@
     overflow-y: auto;
 }
 
+.ChatBody .collection {
+    padding: 1rem 0;
+}
+
 .ChatBody .collection p{
     overflow: hidden;
 }
 
-.ChatBody .collection p:nth-child(odd){
+.ChatBody p{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ChatBody .collection p:nth-child(even){
     max-width: 100%;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(241, 241, 241);
+}
+
+.ChatBody .collection p:first-child button{
+    display: none;
 }

@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import Options from '../Options/Options'
 import Chat from '../Chat/Chat'
 import './UserPage.css'
+import {getChat} from '../actions/userAction'
 
 const UserPage = (props) => {
     return(
@@ -13,7 +14,9 @@ const UserPage = (props) => {
                 <div className='col s12 l4'>
                     <h3>{props.name}</h3>
                     <div className="collection">
-                        <Link to="/messenger/chat" className="collection-item">Чат</Link>
+                        <Link to="/messenger/chat" className="collection-item"
+                            onClick={() => { props.getChat() }}
+                        >Чат</Link>
                         <Link to="/messenger/options" className="collection-item">Настройка профиля</Link>
                     </div>
                     <Exit />
@@ -35,4 +38,10 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(UserPage)
+function mapDispatchToProps(dispatch){
+    return{
+        getChat: () => dispatch( getChat() )
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage)

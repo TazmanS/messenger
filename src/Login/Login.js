@@ -30,7 +30,7 @@ const Register = (props) => {
                         minLength="6"
                         type="text" className="validate" required
                         onChange={(event) => {
-                                userPasswordHandler(userPassword = event.target.value)
+                            userPasswordHandler(userPassword = event.target.value)
                         }}
                         value={userPassword}
                     />

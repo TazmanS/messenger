@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
-import {userNewMess} from '../actions/userAction'
+import {userNewMess, userDelMess} from '../actions/userAction'
 import './Chat.css'
 
 const Chat = (props) => {
@@ -11,6 +11,11 @@ const Chat = (props) => {
         return(
             <p key={index} className='collection-item'>
                 {one.name} : {one.text} 
+                <button className='btn-small'
+                    onClick={() => {
+                        props.userDelMess(index)
+                    }}
+                >X</button>
             </p>
         )
     })
@@ -50,7 +55,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return{
-        userNewMess: (newMess) => dispatch( userNewMess(newMess) )
+        userNewMess: (newMess) => dispatch( userNewMess(newMess) ),
+        userDelMess: (index) => dispatch( userDelMess(index) )
     }
 }
 
